@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <title>Version control &amp; RMarkdown</title>
-    <meta charset="utf-8">
-    <meta name="date" content="2018-11-27" />
+    <meta charset="utf-8" />
+    <meta name="date" content="2020-01-24" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom-fonts.css" type="text/css" />
@@ -14,11 +14,26 @@ class: center, middle, inverse, title-slide
 
 # Version control &amp; RMarkdown
 ## EcoDataSci-TLV
-### 2018-11-27
+### 2020-01-24
 
 ---
 
 
+
+class: exercise
+
+# Administration
+
+- The R group will meet every two weeks
+- Tell us what you want to see in the meeting by filling the survey https://forms.gle/LxPoH2yZHCRVTcy99
+
+&lt;br&gt;
+**Email us with any questions:**  
+Maria Novosolov (GeoGen): marianovosolov@gmail.com    
+Hannah Lois Owens (CMEC): hannah.owens@sund.ku.dk   
+Isolde van Riemsdijk (GeoGen): isolde.vanriemsdijk@naturalis.nl    
+---
+class: exercise
 
 # <i class="fas  fa-check "></i> Check-in
 
@@ -27,13 +42,18 @@ To follow along, you should have:
 - a GitHub account - [create one now](https://github.com/) if you don't have one already!
 - git installed and connected to RStudio (detailed installation instructions [here](http://happygitwithr.com/installation-pain.html))
 
-Ask questions and share resources on the [EcoDataSci-TLV Slack](https://ecodatascitlv.slack.com/messages)
+## Slides link: https://globedatasci-ku.github.io/git-rmd/pres.html
+
+&lt;br&gt;  
+**Tip:**You can get unlimited private GitHub repositories for _free_ (normally $7/month) with a university email! Sign up [here](https://education.github.com/pack).
+
 ---
 This presentation is based on:
 
-http://ohi-science.org/data-science-training/github.html
+[Happy Git with R](http://happygitwithr.com)  
+[NCEAS GitHub crash course](https://nceas.github.io/training-git-intro/getting-started-with-git-rstudio.html)  
+[Ocean Health Index GitHub training](http://ohi-science.org/data-science-training/github.html)
 
-&amp; https://nceas.github.io/training-git-intro/getting-started-with-git-rstudio.html
 
 ---
 background-image: url(http://www.phdcomics.com/comics/archive/phd101212s.gif)
@@ -59,20 +79,29 @@ background-position: center
 background-size: cover
 
 ---
-# <i class="fab  fa-git "></i>
+# git
 
+.pull-left[
 Version control system that lives on your computer. Think "track changes" for files
+]
 
---
-&lt;p&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cropped-big-brother-is-watching-1984.png/800px-Cropped-big-brother-is-watching-1984.png" width=60%&gt;
+.pull-right[
+&lt;p&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cropped-big-brother-is-watching-1984.png/800px-Cropped-big-brother-is-watching-1984.png" width=100%&gt;
+]
 
 ---
 # <i class="fab  fa-git "></i> is not
 
+.pull-left[
 - a full backup
 - meant for data, images, etc
 
 git works best with _text-based_ files!
+]
+
+.pull-right[
+![](img/diffs.PNG)
+]
 
 ---
 # GitHub <i class="fab  fa-github "></i>
@@ -84,10 +113,6 @@ git works best with _text-based_ files!
 - browse source code ([CRAN](https://github.com/cran),  [tidyverse](https://github.com/tidyverse/), [rOpenSci](https://github.com/ropensci))
 - use packages not on CRAN (`devtools::install_github("account/repo")`)
 - host web pages  
-
---
-&lt;br&gt;  
-You get unlimited private GitHub repositories for _free_ (normally $7/month) while you are a student! Sign up [here](https://education.github.com/pack).
 
 ---
 background-image: url(http://ohi-science.org/data-science-training/img/commit_compare_3.png)
@@ -108,6 +133,18 @@ class: inverse, center, middle
 
 # GitHub: let's get oriented!  
 ---
+class: exercise
+
+Take a moment to explore this repository: 
+
+# https://github.com/isteves/typos
+
+- When was the .xlarge[repository 📂] first created?
+- What .xlarge[commits 💍] have been made to the repository?
+- What .xlarge[issues ❌] have been submitted?
+- What .xlarge[pull requests 🙏] (PRs) have been submitted?
+- Are there any .xlarge[forks 🍴] or .xlarge[branches 🌵]?
+---
 background-image: url(img/github-account.png)
 background-position: center
 background-size: 100%
@@ -125,6 +162,8 @@ background-image: url(img/github-commits.png)
 background-position: center
 background-size: 100%
 ---
+class: exercise
+
 # Let's create a repo from scratch...  
 ### (choose a unique name!)
 
@@ -141,18 +180,6 @@ background-image: url(http://ohi-science.org/data-science-training/img/create_re
 background-position: center
 background-size: 100%
 
----
-
-# Alternative workflow
-
-If you want to work off of an existing repository on GitHub...
-
-1. **Fork a repo** = make a copy of the repo on your account
-2. **Make a branch** = start an alternate timeline
-3. **Make a change**
-4. **Examine the differences**
-
-It's good practice to keep your "master" branch clean so that you can keep it synchronized with the original repository
 
 ---
 
@@ -227,7 +254,7 @@ Each project is a self-contained set of files. Projects make it **easy to transf
 ```r
 read.csv("data/eilat_survey_2017.csv")
 #rather than
-read.csv("C:/חזי/phd/thesis/reef_surveys/data/eilat_survey_2017.csv")
+read.csv("C:/Mariaי/phd/thesis/reef_surveys/data/eilat_survey_2017.csv")
 ```
 
 You never have to use `setwd()` again! 
@@ -258,8 +285,9 @@ A lightweight text editor originally built to be presented as html
 
 A __one-stop-shop__ for writing code and sharing your work with various formats
 
+.center[
 &lt;p&gt;&lt;img src="https://tinyurl.com/yc9aqyna" center width=30%&gt;
-
+]
 ---
 
 # __Type of outputs for Rmarkdown__ 
@@ -296,7 +324,7 @@ output: html_document
 - The chunk must be enclosed between ` ``` ` and then `{r}` at the top
 - keybord shortcut: ctrl + Alt + I (Windows) or cmd + Alt + I (MacOS)
 
-&lt;p&gt;&lt;img src="https://tinyurl.com/ybpbbe4f" width=70%&gt;
+&lt;p&gt;&lt;img src="img/rmarkdown_code.png" width=70%&gt;
 
 ---
 ## __Plain text__
@@ -308,9 +336,11 @@ Here you write everything that isn't a code by using markdown related symbols to
 
 &lt;p&gt;&lt;img src="https://tinyurl.com/ycgusx7u" width=100%&gt;
 
-You create an Rmd file, then you knit it with knitr package, it is passed to one of the rendering packages like pandoc or LaTex, and the final format is created
+You create an Rmd file, then you knit it with knitr package, it is passed to one of the rendering packages like pandoc (for html) or LaTex (for pdf), and the final format is created
 
 ---
+class: exercise
+
 # __Practice time__
 
 1. Open an Rmd file in the project you created before
@@ -321,8 +351,9 @@ You create an Rmd file, then you knit it with knitr package, it is passed to one
 ---
 __Congradulations!!!__ 🎉 🎊 🥳 You created your first Rmd file!! 😄
 
-&lt;p&gt;&lt;img src="https://www.chronicle.com/blogs/profhacker/files/2018/01/markdowncat.jpg" width=100%&gt;
-
+.center[
+&lt;p&gt;&lt;img src="https://www.chronicle.com/blogs/profhacker/files/2018/01/markdowncat.jpg" width=80%&gt;
+]
 
 ---
 class: inverse, center, middle
@@ -397,14 +428,14 @@ https://ourcodingclub.github.io/2016/11/24/rmarkdown-1.html
 
 class: inverse, center, middle
 
-# __Other formats of Rmarkdown___
+# __Other formats of Rmarkdown__
 
-&lt;p&gt;&lt;img src="https://pbs.twimg.com/media/DcrW6_UWkAAVjnB.jpg" width=90%&gt;
+&lt;p&gt;&lt;img src="https://pbs.twimg.com/media/DcrW6_UWkAAVjnB.jpg" width=60%&gt;
 
 ---
 
 ## The YAML header for website
-Here is an example from the website used in our last session
+Here is an example from the website
 ```r
 ---
 title: "Visualizations in R"
@@ -420,8 +451,15 @@ output:
     # number_sections: true
 ---
 
+
 ```
 
+---
+class: inverse, center, middle
+
+## Lets check how it looks online
+
+https://ecodatasci-tlv.github.io/visualizations_in_r/
 ---
 # __Books__
 
@@ -432,11 +470,16 @@ output:
 
 
 ---
-More information and __websites__ and guidlines on how to build them can be found [here](https://bookdown.org/yihui/rmarkdown/websites.html)
+class: center, middle
+
+More information on __websites__ and guidlines on how to build them can be found [here](https://bookdown.org/yihui/rmarkdown/websites.html)
 
 More information about how to build __books__ can be found [here](https://bookdown.org/yihui/rmarkdown/books.html)
 ---
 class: inverse, center, middle
+# Lets get back to git
+
+--
 # Basic git flow ~ life cycle of a relationship
 ---
 # First, you **pull** them in
@@ -449,25 +492,33 @@ class: inverse, center, middle
 ![](https://media.giphy.com/media/3QAUnTsafSMQE/giphy.gif)
 ---
 # Finally, you **push** out babies 
-
-&lt;img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Egg_laying_-_Harmonia_axyridis_%282127209595%29.jpg" width=50%&gt; 
-
+.pull-left[
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Egg_laying_-_Harmonia_axyridis_%282127209595%29.jpg" width=90%&gt;  
+]
 --
 
-## (or **push** them away...) &lt;img src="https://media.giphy.com/media/7vzG5HU8nE2pCJbUGj/giphy.gif" width =50%&gt;
+
+.pull-right[
+## (or __push__ them away...) 
+
+&lt;img src="https://media.giphy.com/media/7vzG5HU8nE2pCJbUGj/giphy.gif"&gt;
+]
+
+
 ---
 background-image: url(http://ohi-science.org/data-science-training/img/push_pull_clone.png)
 background-position: center
-background-size: 50%
+background-size: auto 90%
 
 ---
 # Sync from RStudio to GitHub
 
+.center[
 ![](http://ohi-science.org/data-science-training/img/commit_overview.png)
-
-![http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](img/version-control-rstudio-cheatsheet.PNG)
-
-http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf
+.img-small[
+[![http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf](img/version-control-rstudio-cheatsheet.PNG)](http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)
+]
+]
 
 ---
 background-image:url(https://media.giphy.com/media/ycpCka5zPAUvMr6PU6/giphy.gif), url(http://ohi-science.org/data-science-training/img/pull.png)
@@ -489,6 +540,18 @@ background-size: 30%, 100%
 background-image: url(img/github-flow.png)
 background-position: center
 background-size: 90%
+
+---
+class: exercise
+
+# Your turn
+
+1. Pull - make sure your branch is up-to-date
+2. Make changes to `index.Rmd`. Save and knit
+3. Stage ✅ `index.Rmd` and ✅ `index.html` 
+4. Commit 💍
+5. Push - sync with remote repository
+
 ---
 class: inverse, center, middle
 # Host Rmd's online with GitHub Pages
@@ -498,6 +561,18 @@ background-position: center
 background-size: 90%
 
 In your repo settings (scroll down):
+---
+class: exercise
+
+# Your turn
+
+1. Turn on GitHub pages (from the repo home page, click Settings --&gt; set source to _master branch_)
+2. Check out your new web page!
+
+## USERNAME.github.com/REPONAME
+
+_Note:_ if your file was not named `index.html`, then you'll have to add `/FILENAME.html` to the end of the URL
+
 ---
 # A few tricks
 
@@ -518,34 +593,88 @@ output:
 class: inverse, center, middle
 # Let's collaborate!
 ---
-# <i class="fas  fa-check "></i> Check-in
 
-You should have:
-- a repository on GitHub
-- an RProject linked to the GitHub repository
+# Contribute changes
+
+If you want to work off of an existing repository on GitHub...
+
+1. **Fork a repo** = make a copy of the repo on your account
+2. **Make a branch** = start an alternate timeline
+3. **Make a change**
+4. **Examine the differences**
+
+It's good practice to keep your "master" branch clean so that you can keep it synchronized with the original repository
+---
+class: exercise
+
+# Your turn
+
+https://github.com/isteves/typos
+
+1. Fork the repo = make a copy of the repo on your account
+2. Make a branch = start an alternate timeline
+3. Make and commit a change
+4. Submit a pull request
+---
+# Collaborating on a single repo
+
+Eventually, you'll have to start thinking about .xlarge[merge conflicts]. This is especially true when you start to collaborate on a single repostory.
+
+If you edit the same line of code or text as your collaborator, you will need to _manually_ resolve the conflict.
 
 ---
-# Try this!
+class: exercise
 
-In your GitHub repo, go into `Settings` --&gt; `Collaborators`.  Add your neighbor as a collaborator
+# Work in pairs
 
+1. Choose one of your repos
+2. Go into `Settings` --&gt; `Collaborators`. Add your neighbor as a collaborator
+3. Accept the email invitation
+
+.img-small[
 ![](http://ohi-science.org/data-science-training/img/github_collab.png)
+]
+---
+
+class: exercise
+
+# Make a change
+
+1. The collaborator - create a new git repository in RStudio
+2. Both - make and commit a change ON THE SAME LINE
+3. Collaborator - PUSH the change
+4. Repo owner - PULL
+5. Repo owner - resolve the conflict, COMMIT, and PUSH
 
 ---
 
-# Try this!
+class: inverse, center, middle
+# GITting stuck - how to save yourself
 
-Switch over to your _neighbor's_ repo:
+---
+# https://happygitwithr.com/
 
-1. Accept your neighbor's invitation
-2. Create a GitHub RStudio project
-3. Make a change
-4. Pull + stage/commit + push
+Ultimate guide for R/RStudio workflows with git/GitHub
 
+- installation problems
+- connecting GitHub to an RStudio project (or vice versa)
+- setting up ssh
+- how to "burn it all down" 🔥
+
+---
+
+# Use the terminal
+
+Most of the resources online tell you what series of `git` commands to use to achieve your goal. The **terminal** is where you can type those commands
+
+.center[
+.img-small[
+![](img/terminal.png)
+]]
 ---
 # There's more!  
 
-...but we'll cover these next time.  In the mean time,  check out these resources for step-by-step guides for:
+Check out these resources for step-by-step guides for:
 
 - using `gitignore` to tell git what NOT to track
 - dealing with merge conflicts
@@ -556,24 +685,67 @@ Switch over to your _neighbor's_ repo:
 [NCEAS GitHub crash course](https://nceas.github.io/training-git-intro/getting-started-with-git-rstudio.html)  
 [Ocean Health Index GitHub training](http://ohi-science.org/data-science-training/github.html)
     </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
-"highlightLines": true
+"highlightLines": true,
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
 })();</script>
 
 <script>
 (function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -587,7 +759,8 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     i++;
   }
-})();
+};
+slideshow._releaseMath(document);
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
