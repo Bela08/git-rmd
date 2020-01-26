@@ -38,7 +38,7 @@ class: exercise
 To follow along, you should have:
 
 - a GitHub account - [create one now](https://github.com/) if you don't have one already!
-- git installed and connected to RStudio (detailed installation instructions [here](http://happygitwithr.com/installation-pain.html))
+- git installed and connected to RStudio (detailed installation instructions [here](https://happygitwithr.com/install-git.html))
 
 ## Slides link: https://globedatasci-ku.github.io/git-rmd/pres.html
 
